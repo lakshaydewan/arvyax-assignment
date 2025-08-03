@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
-import { FileText, Calendar, Tag, Loader2} from "lucide-react"
+import { FileText, Calendar, Tag, Loader2 } from "lucide-react"
 import SessionCard from "@/components/sessionCard"
 import FloatingNavbar from "@/components/floatingNav"
 import { useEffect, useState } from "react"
@@ -11,7 +11,7 @@ export default function Dashboard() {
 
     const [sessions, setSessions] = useState<Session[] | null>(null)
 
-    useEffect(()=> {
+    useEffect(() => {
 
         const fetchSessions = async () => {
             const res = await axios.get("http://localhost:3000/api/session")
@@ -20,12 +20,12 @@ export default function Dashboard() {
         }
 
         fetchSessions()
-        
     }, [])
 
     if (!sessions) {
         return (
             <div className="flex items-center justify-center min-h-screen bg-gradient-to-br from-[#052f2e] to-neutral-900">
+                <FloatingNavbar />
                 <div className="text-neutral-300">
                     <Loader2 className="animate-spin h-5 w-5" />
                 </div>

@@ -41,6 +41,7 @@ export default function MySessions() {
     }, [refetch])
 
     if (!sessions) return <div className="min-h-screen bg-gradient-to-br from-[#052f2e] to-neutral-900 flex items-center justify-center text-white">
+        <FloatingNavbar />
         <Loader2 className="h-4 w-4 animate-spin" />
     </div>
 
